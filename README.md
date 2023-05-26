@@ -36,22 +36,17 @@ Open your web browser and navigate to `http://localhost:4000/api-docs`. Here, yo
 
 ### Retrieve All Restaurants
 
-- **URL:** `/restaurants`
 - **Method:** GET
-- **Description:** Retrieve all restaurants
 - **Response:** An array of restaurant objects
 
 ### Add a New Restaurant
 
-- **URL:** `/restaurant`
 - **Method:** POST
-- **Description:** Add a new restaurant
 - **Request Body:** JSON object containing the `id` and `name` of the restaurant
 - **Response:** Confirmation message with the created restaurant details
 
 ### Delete a Restaurant
 
-- **URL:** `/restaurant/:id`
 - **Method:** DELETE
 - **Description:** Delete a restaurant by ID
 - **URL Parameter:** ID of the restaurant to be deleted
