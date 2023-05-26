@@ -70,66 +70,54 @@
                 }
             }
         },
-        "/restaura":{
-            "delete":{
-                
-                    "tags": ["Restaurants"],
-                    "summary": "Delete a Restaurants from system",
-                    "description": "Delete a restaurant",
-                    "parameters": [
-                        {
-                            "name": "restaurant",
-                            "in": "body",
-                            "description": "Delete a restaurant",
-                            "schema": {
-                                "$ref": "#/defii/Restaurant"
-                            }
-                        }
-                    ],
-                    "produces": [
-                        "application/json"
-                    ],
-                    "responses": {
-                        "200": {
-                            "description": "Restaurant is deleted",
-                            "schema": {
-                                "$ref": "#/defii/Restaurant"
-                            }
-                        }
-                    }
-                
+         "/restaurant/{id}": {
+      "delete": {
+        "tags": [
+          "Restaurants"
+        ],
+        "summary": "Delete a restaurant from system",
+        "description": "Delete a restaurant by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the restaurant to delete",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Restaurant is deleted",
+            "schema": {
+              "$ref": "#/definitions/Restaurant"
             }
+          }
         }
-    },
-    "definitions": {
-        "Restaurant": {
-            "required": ["id","name"],
-            "properties": {
-                "id": {
-                    "type": "integer",
-                    "uniqueItems": true
-                },
-                "name": {
-                    "type": "string"
-                }
-            }
-        }
-    },
-    "defii":{
-        "Restaurant": {
-            "required": ["id"],
-            "properties": {
-                "id": {
-                    "type": "integer",
-                    "uniqueItems": true
-                }
-                
-            }
-        }
+      }
     }
-
+  },
+  "definitions": {
+    "Restaurant": {
+      "required": [
+        "id",
+        "name"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "uniqueItems": true
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    }
+  }
 }
-
 
 
 
